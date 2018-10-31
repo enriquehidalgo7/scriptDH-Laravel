@@ -13,7 +13,7 @@ class ProductsTableSeeder extends Seeder
     {
         $products = [
             [
-                'name' => "Samsung",
+                'name' => "Huawei Mate 9",
                 'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua consequat.',
                 'units' => 20,
@@ -23,7 +23,7 @@ class ProductsTableSeeder extends Seeder
                 'updated_at' => null,
             ],
             [
-                'name' => "Motorola",
+                'name' => "Huawei Mate 10",
                 'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua consequat.',
                 'units' => 20,
@@ -33,7 +33,7 @@ class ProductsTableSeeder extends Seeder
                 'updated_at' => null,
             ],
             [
-                'name' => "Apple",
+                'name' => "Huawei Mante Note 9",
                 'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua consequat.',
                 'units' => 37,
@@ -43,7 +43,7 @@ class ProductsTableSeeder extends Seeder
                 'updated_at' => null,
             ],
             [
-                'name' => 'Huawei',
+                'name' => "Huawei Mante Note 01",
                 'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua consequat.',
                 'units' => 10,
@@ -52,6 +52,107 @@ class ProductsTableSeeder extends Seeder
                 'created_at' => new DateTime,
                 'updated_at' => null,
             ],
+            [
+                'name' => "Samsung Galaxy S9",
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua consequat.',
+                'units' => 20,
+                'price' => 9999.99,
+                'image' => '*',
+                'created_at' => new DateTime,
+                'updated_at' => null,
+            ],
+            [
+                'name' => "Samsung Galaxy S9+",
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua consequat.',
+                'units' => 20,
+                'price' => 9999.99,
+                'image' => '*',
+                'created_at' => new DateTime,
+                'updated_at' => null,
+            ],
+            [
+                'name' => "Samsung Galaxy Note 9",
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua consequat.',
+                'units' => 20,
+                'price' => 9999.99,
+                'image' => '*',
+                'created_at' => new DateTime,
+                'updated_at' => null,
+            ],
+            [
+                'name' => "Samsung Galaxy Note 8",
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua consequat.',
+                'units' => 20,
+                'price' => 9999.99,
+                'image' => '*',
+                'created_at' => new DateTime,
+                'updated_at' => null,
+            ],
+            [
+                'name' => "Motorola Moto Z3",
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua consequat.',
+                'units' => 20,
+                'price' => 9999.99,
+                'image' => '*',
+                'created_at' => new DateTime,
+                'updated_at' => null,
+            ],
+            [
+                'name' => "Motorola Moto Z2",
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua consequat.',
+                'units' => 20,
+                'price' => 9999.99,
+                'image' => '*',
+                'created_at' => new DateTime,
+                'updated_at' => null,
+            ],
+            [
+                'name' => "Motorola Moto Z",
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua consequat.',
+                'units' => 20,
+                'price' => 9999.99,
+                'image' => '*',
+                'created_at' => new DateTime,
+                'updated_at' => null,
+            ],
+            [
+                'name' => "iPhone X",
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua consequat.',
+                'units' => 20,
+                'price' => 9999.99,
+                'image' => '*',
+                'created_at' => new DateTime,
+                'updated_at' => null,
+            ],
+            [
+                'name' => "iPhone Xr",
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua consequat.',
+                'units' => 20,
+                'price' => 9999.99,
+                'image' => '*',
+                'created_at' => new DateTime,
+                'updated_at' => null,
+            ],
+            [
+                'name' => "iPhone Xs",
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua consequat.',
+                'units' => 20,
+                'price' => 9999.99,
+                'image' => '*',
+                'created_at' => new DateTime,
+                'updated_at' => null,
+            ],
+            
         ];
 
         DB::table('products')->insert($products);
