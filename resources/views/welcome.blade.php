@@ -1,96 +1,118 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.master')
 
-        <title>Laravel</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
-
+@section('content')
             <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
+              <div class="slider">
+      <img src="img/sliderIphoneX.jpg" class="responsive">
+    </div>
+    <div class="container">
+      <div class="linea">
+        <span>productos destacados</span>
+      </div>
+    </div>
+    <div class="container">
+      <div class="productos">
+        <a href="/productos">
+          <article class="producto">
+            <img src="img/categorias/nuevo.png" width="100%" class="nuevo">
+            <img src="img/iphonex.jpg" width="100%">
+            <div class="nombreProducto">iPhone X - 64 gb</div>
+            <div class="precioProducto">$37.900</div>
+            <a href="/carrito">
+              <div class="agregar">agregar al <i class="fas fa-shopping-cart"></i></div>
+            </a>
+          </article>
+        </a>
+        <a href="/productos">
+          <article class="producto">
+            <div class="descuento">10%</div>
+            <img src="img/samsungs9.jpg" width="100%">
+            <div class="nombreProducto">Samsung S9</div>
+            <div class="precioDescuento">$32.999</div>
+            <div class="precioProducto">$29.699</div>
+            <a href="carrito.php">
+              <div class="agregar">agregar al <i class="fas fa-shopping-cart"></i></div>
+            </a>
+          </article>
+        </a>
+        <a href="/productos">
+          <article class="producto">
+            <img src="img/motorola.jpg" width="100%">
+            <div class="nombreProducto">Motorola Z3</div>
+            <div class="precioProducto">$23.900</div>
+            <a href="carrito.php">
+              <div class="agregar">agregar al <i class="fas fa-shopping-cart"></i></div>
+            </a>
+          </article>
+        </a>
+        <a href="/productos">
+          <article class="producto">
+            <div class="descuento">9%</div>
+            <img src="img/huaweip20.jpg" width="100%">
+            <div class="nombreProducto">Huawei P20</div>
+            <div class="precioDescuento">$29.999</div>
+            <div class="precioProducto">$28.499</div>
+            <a href="carrito.php">
+              <div class="agregar">agregar al <i class="fas fa-shopping-cart"></i></div>
+            </a>
+          </article>
+        </a>
+      </div>
+    </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+    <div class="container-total">
+      <div class="container justificar">
+        <div class="ofertas">
+          <div class="linea">
+            <span>accesorios</span>
+          </div>
+          <div class="contenedorOfertas">
+            <div class="bordeCategoria">
+              <img src="img/categorias/cargadores.jpg" class="fotoCategoria">
+              cargadores
             </div>
+            <div class="bordeCategoria">
+              <img src="img/categorias/auriculares.jpg" class="fotoCategoria">
+              auriculares
+            </div>
+            <div class="bordeCategoria">
+              <img src="img/categorias/fundas.jpg" class="fotoCategoria">
+              fundas
+            </div>
+            <div class="bordeCategoria">
+              <img src="img/categorias/soportes.jpg" class="fotoCategoria">
+              soportes
+            </div>
+            <div class="bordeCategoria">
+              <img src="img/categorias/films.jpeg" class="fotoCategoria">
+              films
+            </div>
+            <div class="bordeCategoria">
+              <img src="img/categorias/cables.jpg" class="fotoCategoria">
+              cables
+            </div>
+          </div>
         </div>
-    </body>
-</html>
+      </div>
+    </div>
+
+    <div class="container justificar">
+      <div class="datos">
+        <div class="ventaTelefonica">
+          <p class="bold">Venta telefónica</p>
+          <i class="fas fa-phone"></i> 0810-123-smart
+        </div>
+        <div class="atencionTelefonica">
+          <p class="bold">Atención al cliente</p>
+          <i class="fas fa-envelope"></i><a href="mailto:cliente@smarteate.com.ar?subject=Correo%20desde%20la%20web%20SmarTeate">cliente@smarteate.com.ar</a>
+        </div>
+        <div class="entrega">
+          <p class="bold">Entrega</p>
+          <i class="fas fa-shipping-fast"></i> En 24 hs. recibís tus productos.
+        </div>
+      </div>
+    </div>
+            </div>
+    @endsection
