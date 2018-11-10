@@ -15,4 +15,8 @@
         public function orders(){
             return $this->hasMany(Order::class);
         }
+
+        public function accesorie(){
+            return $this->hasMany(Accesorie::class);
+        }
     }

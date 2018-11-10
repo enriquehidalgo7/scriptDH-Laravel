@@ -9,7 +9,7 @@
         use SoftDeletes;
 
         protected $fillable = [
-            'product_id', 'user_id', 'quantity', 'address' 
+            'product_id', 'user_id', 'quantity', 'address'
         ];
 
         public function user()
@@ -20,6 +20,11 @@
         public function product()
         {
             return $this->belongsTo(Product::class, 'product_id');
+        }
+
+        public function accesorie()
+        {
+            return $this->belongsTo(Accesorie::class, 'accesorie_id');
         }
 
     }
