@@ -14,17 +14,25 @@
     </div>
     <div class="container">
       <div class="productos">
-        <a href="/productos">
+          @forelse($products as product)
+        <a href= "show/{{$product->id}}">
           <article class="producto">
-            <img src="img/categorias/nuevo.png" width="100%" class="nuevo">
-            <img src="img/iphonex.jpg" width="100%">
-            <div class="nombreProducto">iPhone X - 64 gb</div>
-            <div class="precioProducto">$37.900</div>
-            <a href="/carrito">
+            <img src="{{$product->images}}" width="100%" class="nuevo">
+            <div class="nombreProducto">{{ $product->name}}</div>
+            <div class="precioProducto">{{ $product->price}}</div>
+            <!-- podemos agregar la descripción del producto acá, dentro de la página del producto especifico -->
+            <!-- <div class="DescriptionProducto">{{ $product->description}}</div> -->
+
+
+            <!-- La opción de agregar al carrito la incluiria en la pagina especifica del producto -->
+            <!-- <a href="/carrito">
               <div class="agregar">agregar al <i class="fas fa-shopping-cart"></i></div>
-            </a>
+            </a> -->
+            @empty
+            <p>No tenemos productos en este momento</p>
           </article>
         </a>
+          @endforelse  
         <a href="/productos">
           <article class="producto">
             <div class="descuento">10%</div>
