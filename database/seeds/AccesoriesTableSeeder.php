@@ -11,7 +11,7 @@ class AccesoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        $products = [
+        $accesories = [
             [
                 'name' => "Funda Huawei Mate 9",
                 'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
