@@ -23,3 +23,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/producto', 'ProductController@index');
 
 Route::get('/carrito', 'OrderController@show');
+
+Route::post('/producto/search', 'ProductController@search');
