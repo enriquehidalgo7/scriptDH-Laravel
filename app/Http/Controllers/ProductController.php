@@ -12,11 +12,18 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-    }
+     public function index() {
 
+     }
+
+     public function search() {
+
+       $product = Product::search(Input::get('search'))->orderBy('id', 'desc')->paginate(6);
+
+       return view('search', ['product' => $product]);
+     }
+
+     
     /**
      * Show the form for creating a new resource.
      *
