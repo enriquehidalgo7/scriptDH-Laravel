@@ -11,16 +11,21 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('smarteate/home', 'ProductController@latest');
+
+Route::get('smarteate/home', 'accesorieController@latestacc');
+
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('/producto', 'ProductController@index');
+Route::get('/productos', 'ProductController@index');
 
 Route::get('/carrito', 'OrderController@show');
 

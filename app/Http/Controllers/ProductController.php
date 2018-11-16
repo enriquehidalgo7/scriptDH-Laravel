@@ -16,19 +16,32 @@ class ProductController extends Controller
 
      }
 
-     public function search() {
+     // public function search() {
+     //
+     //   $product = Product::search(Input::get('search'))->orderBy('id', 'desc')->paginate(6);
+     //
+     //   return view('search', ['product' => $product]);
+     // }
 
-       $product = Product::search(Input::get('search'))->orderBy('id', 'desc')->paginate(6);
 
-       return view('search', ['product' => $product]);
-     }
-
-     
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function latest()
+     {
+         $latestproducts = Product::where('units', '>', 10)
+          ->latest()
+          ->limit(4)
+          ->get();
+
+          return view('welcome', compact('latestproducts'));
+     }
+
+
+
     public function create()
     {
         //

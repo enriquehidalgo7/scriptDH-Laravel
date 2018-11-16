@@ -6,9 +6,12 @@
     <title>@yield('title')</title>
   </head>
   <body>
-    <!-- header -->
-    @include('partials.header')
-    <!-- header -->
+    <div class="">
+      <!-- header -->
+      @include('partials.header')
+      <!-- header -->
+    </div>
+
 
     <!-- main content -->
     @yield('content')
