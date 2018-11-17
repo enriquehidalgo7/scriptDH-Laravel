@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\User;
 
 class UsersTableSeeder extends Seeder
 {
@@ -14,7 +15,7 @@ class UsersTableSeeder extends Seeder
         $user = new User;
         $user->name = "Admin";
         $user->email = "admin@devtest.com";
-        $user->password = encript('secret');
+        $user->password = bcrypt('secret');
         $user->is_admin = true;
         $user->remember_token = str_random(10);
         $user->save();

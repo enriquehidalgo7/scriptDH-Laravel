@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Accesorie;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -37,7 +38,12 @@ class ProductController extends Controller
           ->limit(4)
           ->get();
 
-          return view('welcome', compact('latestproducts'));
+          $latestaccesories = Accesorie::where('units', '>', 10)
+           ->latest()
+           ->limit(4)
+           ->get();
+
+          return view('welcome', compact('latestproducts', 'latestaccesories'));
      }
 
 
@@ -64,9 +70,11 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($id)
     {
-        //
+      $product = Product::find($id);
+
+      return view('showProduct', compact('product'));
     }
 
     /**

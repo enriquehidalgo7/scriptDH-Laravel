@@ -17,7 +17,7 @@
 
 Route::get('smarteate/home', 'ProductController@latest');
 
-Route::get('smarteate/home', 'accesorieController@latestacc');
+// Route::get('smarteate/home', 'accesorieController@latestacc');
 
 
 Auth::routes();
@@ -30,3 +30,5 @@ Route::get('/productos', 'ProductController@index');
 Route::get('/carrito', 'OrderController@show');
 
 Route::post('/producto/search', 'ProductController@search');
+
+Route::get('/productos/{id}', 'ProductController@show');
