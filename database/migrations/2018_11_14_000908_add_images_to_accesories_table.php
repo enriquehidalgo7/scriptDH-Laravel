@@ -25,8 +25,7 @@ class AddImagesToAccesoriesTable extends Migration
      */
     public function down()
     {
-        Schema::table('accesories', function (Blueprint $table) {
-            $table->dropColumn('images');
-        });
+        Schema::dropIfExists('images');
+
     }
 }

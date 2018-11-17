@@ -25,8 +25,6 @@ class AddAccesoriesIdToOrdersTable extends Migration
      */
     public function down()
     {
-        Schema::table('orders', function (Blueprint $table) {
-            $table->dropColumn('accesories_id');
-        });
+        Schema::dropIfExists('images');
     }
 }

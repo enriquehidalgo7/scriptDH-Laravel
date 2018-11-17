@@ -16,7 +16,7 @@ class AddDefaultValueToImagesOfProductsTable extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->string('images')->default('storage\App\public\products\default.jpg')->change();
+            $table->string('images')->default('storage/App/public/products/default.jpg')->change();
         });
     }
 
@@ -27,8 +27,6 @@ class AddDefaultValueToImagesOfProductsTable extends Migration
      */
     public function down()
     {
-        Schema::table('products', function (Blueprint $table) {
-            $table->dropColumn('images');
-        });
+        Schema::dropIfExists('images');
     }
 }
