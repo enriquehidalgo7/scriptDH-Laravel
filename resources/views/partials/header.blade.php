@@ -14,7 +14,7 @@
     </div>
   <nav class="navbar_Items">
     <div class="navbar_Link opciones">
-      Productos
+      <a href="/allproducts">Productos</a>
     </div>
     <div class="buscador">
       <input type="text" id="buscador" name="buscador" placeholder="buscar...">

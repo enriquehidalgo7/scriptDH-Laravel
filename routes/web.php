@@ -25,7 +25,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('/productos', 'ProductController@index');
+Route::get('/allproducts', 'ProductController@index');
 
 Route::get('/carrito', 'OrderController@show');
 

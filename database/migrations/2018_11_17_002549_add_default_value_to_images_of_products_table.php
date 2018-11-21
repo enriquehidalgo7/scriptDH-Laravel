@@ -16,7 +16,7 @@ class AddDefaultValueToImagesOfProductsTable extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->string('images')->default('storage/App/public/products/default.jpg')->change();
+            $table->string('images')->default(storage_path('app\default.jpg'))->change();
         });
     }
 
