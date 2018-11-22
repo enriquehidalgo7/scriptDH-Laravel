@@ -18,7 +18,7 @@
           @foreach($latestproducts as $product)
         <a href= "/productos/{{$product->id}}">
           <article class="producto">
-            <img src="{{$product->images}}" width="100%" class="nuevo">
+            <img src="{{$product->images}}" class="nuevo">
             <div class="nombreProducto">{{ $product->name}}</div>
             <div class="precioProducto">{{ $product->price}}</div>
               </article>
