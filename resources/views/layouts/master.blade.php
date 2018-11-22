@@ -12,11 +12,12 @@
       <!-- header -->
     </div>
 
-
+    <div class="">
     <!-- main content -->
     @yield('content')
     <!-- main content -->
-
+    </div>
+    
     <div class="">
     <!-- footer -->
     @include('partials.footer')
