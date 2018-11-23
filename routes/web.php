@@ -30,3 +30,5 @@ Route::get('/carrito', 'OrderController@show');
 Route::post('/producto/search', 'ProductController@search');
 
 Route::get('/productos/{id}', 'ProductController@show');
+
+Route::get('order/{id}', 'OrderController@add'); 

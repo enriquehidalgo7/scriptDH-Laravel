@@ -1,4 +1,4 @@
-<?php session_start();
+<?php
 
 namespace App\Http\Controllers;
 
@@ -7,8 +7,21 @@ use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
+
+  public function __construct() {
+    $this->middleware('auth');
+  }
+
+
+
+public function add($id)
+{
+  // code...
+}
+
+
     protected $cart_contents = array();
-    
+
     public function __construct(){
         // get the shopping cart array from the session
         $this->cart_contents = !empty($_SESSION['cart_contents'])?$_SESSION['cart_contents']:NULL;
@@ -17,7 +30,7 @@ class OrderController extends Controller
             $this->cart_contents = array('cart_total' => 0, 'total_items' => 0);
         }
     }
-    
+
     /**
      * Cart Contents: Returns the entire cart array
      * @param    bool
@@ -33,7 +46,7 @@ class OrderController extends Controller
 
         return $cart;
     }
-    
+
     /**
      * Get cart item: Returns a specific cart item details
      * @param    string    $row_id
@@ -44,7 +57,7 @@ class OrderController extends Controller
             ? FALSE
             : $this->cart_contents[$row_id];
     }
-    
+
     /**
      * Total Items: Returns the total item count
      * @return    int
@@ -52,7 +65,7 @@ class OrderController extends Controller
     public function total_items(){
         return $this->cart_contents['total_items'];
     }
-    
+
     /**
      * Cart Total: Returns the total price
      * @return    int
@@ -60,7 +73,7 @@ class OrderController extends Controller
     public function total(){
         return $this->cart_contents['cart_total'];
     }
-    
+
     /**
      * Insert items into the cart and save it to the session
      * @param    array
@@ -91,7 +104,7 @@ class OrderController extends Controller
                 $item['rowid'] = $rowid;
                 $item['qty'] += $old_qty;
                 $this->cart_contents[$rowid] = $item;
-                
+
                 // save Cart Item
                 if($this->save_cart()){
                     return isset($rowid) ? $rowid : TRUE;
@@ -101,7 +114,7 @@ class OrderController extends Controller
             }
         }
     }
-    
+
     /**
      * Update the cart
      * @param    array
@@ -123,7 +136,7 @@ class OrderController extends Controller
                         return TRUE;
                     }
                 }
-                
+
                 // find updatable keys
                 $keys = array_intersect(array_keys($this->cart_contents[$item['rowid']]), array_keys($item));
                 // prep the price
@@ -140,7 +153,7 @@ class OrderController extends Controller
             }
         }
     }
-    
+
     /**
      * Save the cart array to the session
      * @return    bool
@@ -152,12 +165,12 @@ class OrderController extends Controller
             if(!is_array($val) OR !isset($val['price'], $val['qty'])){
                 continue;
             }
-     
+
             $this->cart_contents['cart_total'] += ($val['price'] * $val['qty']);
             $this->cart_contents['total_items'] += $val['qty'];
             $this->cart_contents[$key]['subtotal'] = ($this->cart_contents[$key]['price'] * $this->cart_contents[$key]['qty']);
         }
-        
+
         // if cart empty, delete it from the session
         if(count($this->cart_contents) <= 2){
             unset($_SESSION['cart_contents']);
@@ -167,7 +180,7 @@ class OrderController extends Controller
             return TRUE;
         }
     }
-    
+
     /**
      * Remove Item: Removes an item from the cart
      * @param    int
@@ -179,7 +192,7 @@ class OrderController extends Controller
         $this->save_cart();
         return TRUE;
      }
-     
+
     /**
      * Destroy the cart: Empties the cart and destroy the session
      * @return    void
@@ -189,4 +202,3 @@ class OrderController extends Controller
         unset($_SESSION['cart_contents']);
     }
 }
-

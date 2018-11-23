@@ -14,7 +14,7 @@ class AddImagesToAccesoriesTable extends Migration
     public function up()
     {
         Schema::table('accesories', function (Blueprint $table) {
-            $table->string('images');
+            $table->string('images')->nullable()->default('/storage/accesories/accDefault.jpeg');
         });
     }
 

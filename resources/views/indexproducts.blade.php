@@ -19,4 +19,8 @@ Nuestros Productos
   <h1>No hay productos cargados</h1>
   @endforelse
   </div>
+  <br><br>
+  <div class="container">
+    {{$allProducts->links()}}
+  </div>
 @endsection

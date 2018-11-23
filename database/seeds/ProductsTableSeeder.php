@@ -110,7 +110,7 @@ class ProductsTableSeeder extends Seeder
                 tempor incididunt ut labore et dolore magna aliqua consequat.',
                 'units' => 20,
                 'price' => 9999.99,
-                'image' => null,
+                'images' => '/storage/products/default.jpg',
                 'created_at' => new DateTime,
                 'updated_at' => null,
             ],

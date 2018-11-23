@@ -33,6 +33,7 @@
     @if (Route::has('login'))
         <div class="top-right links">
             @auth
+            <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -50,6 +51,7 @@
                     </form>
                 </div>
             </li>
+          </ul>
             @else
             <div class="navbar_Link login">
               <i class="fas fa-lock"></i>
