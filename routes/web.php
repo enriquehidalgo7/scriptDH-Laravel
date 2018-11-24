@@ -33,4 +33,8 @@ Route::get('/productos/{id}', 'ProductController@show');
 
 Route::get('order/{id}', 'OrderController@add');
 
-Route::get('smarteate/admin', 'AdminController@index'); 
+Route::get('smarteate/admin', 'AdminController@index');
+
+Route::get('smarteate/products/create', 'ProductController@creationForm');
+
+Route::post('product/new/add', 'ProductController@create')
