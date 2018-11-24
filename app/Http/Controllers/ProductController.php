@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Product;
 use App\Accesorie;
-use Illuminate\Http\Request;
+
 
 class ProductController extends Controller
 {
@@ -50,9 +51,25 @@ class ProductController extends Controller
         return view('productForm');
     }
 
-    public function create()
+    public function create(Request $request)
     {
+      $request->validate([
+          'name' => 'required|min:3|max:250',
+          'description' => 'required|max:250|min:50',
+          'price' => 'required|numeric',
+          'units' => 'required|numeric',
+        ]);
 
+        $datos = $request->all();
+
+        if ($request->hasFile('image')) {
+          $path = $request->file('image')->storeAs('public/products', $request->title);
+          $datos['images'] = $path;
+        }
+
+          Product::create($datos);
+
+          return 'todo bien';
     }
 
 

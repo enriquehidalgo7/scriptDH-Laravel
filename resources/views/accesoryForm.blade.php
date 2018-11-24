@@ -13,7 +13,7 @@ Smarteate- Add products
   <br>
   <h1 class="linea">Products Creation Panel</h1>
   <br>
-  <form class="form-group" action="/product/new/add" method="post" enctype="multipart/form-data">
+  <form class="form-group" action="product/new/add" method="post" enctype="multipart/form-data">
     @csrf
     <br>
 
@@ -24,7 +24,7 @@ Smarteate- Add products
 
     <label for="description">Description:</label>
     <br>
-    <textarea name="description" class="form-control" id="Description" rows="4" placeholder="This product is..."></textarea>
+    <textarea class="form-control" id="Description" rows="4" placeholder="This product is..."></textarea>
     <br>
 
     <label for="price">Price:</label>
@@ -48,19 +48,7 @@ Smarteate- Add products
     </div>
     <br>
     <br>
+
   </form>
-@include('partials.error')
-
-
-
-
 </div>
-
-
-
-
-
-
-
-
 @endsection

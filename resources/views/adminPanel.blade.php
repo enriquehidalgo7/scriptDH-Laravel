@@ -2,7 +2,7 @@
 
 
 @section('title')
-Smarteate - Admin Panel
+Smarteate - Panel de Administrador
 @endsection
 
 @section('content')
@@ -12,7 +12,7 @@ Smarteate - Admin Panel
   </div>
   <br>
   <div class="row justify-content-center">
-    <a href="smarteate/products/create" class="btn btn-success text-center">Crear Productos</a>
+    <a href="/products/create" class="btn btn-success text-center">Crear Productos</a>
   </div>
   <br><br>
   @forelse($Products as $product)
@@ -30,18 +30,58 @@ Smarteate - Admin Panel
     </div>
     <div class="list-group col-sm-4 d-inline-flex p-2">
       <br><br>
-      <a href="smarteate/edit/product/{{$product->id}}" class="list-group-item list-group-item-primary text-center">Edit</a>
+      <a href="smarteate/edit/product/{{$product->id}}" class="list-group-item list-group-item-primary text-center">Editar</a>
 
       <br><br>
 
-      <a href="smarteate/delete/product/{{$product->id}}" class="list-group-item list-group-item-danger text-center">Delete</a>
+      <a href="smarteate/delete/product/{{$product->id}}" class="list-group-item list-group-item-danger text-center">Borrar</a>
     </div>
     @empty
     <strong>No hay productos cargados</strong>
     @endforelse
-    <div class="container">
+    <div class="container d-flex justify-content-center">
       {{$Products->links()}}
     </div>
+  </section>
+
+    <br><br>
+
+    <section class="container">
+    <div class="linea">
+      <span>Accesorios</span>
+    </div>
+    <br>
+    <div class="row justify-content-center">
+      <a href="smarteate/accesories/create" class="btn btn-success text-center">Crear Accesorio</a>
+    </div>
+    <br><br>
+    @forelse($Accesories as $accesory)
+    <div class="row">
+      <div class="col-sm-8 d-flex flex-column justify-content-center">
+        <img src="{{$accesory->images}}" class="img-thumbnail mx-auto">
+        <div class="ustify-content-center">{{ $accesory->name}}</div>
+        <br>
+        <div class="justify-content-center">{{ $accesory->description}}</div>
+        <br>
+        <div class="justify-content-center">{{ $accesory->price}}</div>
+        <br>
+        <div class="justify-content-center">{{ $accesory->units}}</div>
+        <br>
+      </div>
+      <div class="list-group col-sm-4 d-inline-flex p-2">
+        <br><br>
+        <a href="smarteate/edit/accesory/{{$accesory->id}}" class="list-group-item list-group-item-primary text-center">Editar</a>
+
+        <br><br>
+
+        <a href="smarteate/delete/accesory/{{$accesory->id}}" class="list-group-item list-group-item-danger text-center">Borrar</a>
+      </div>
+      @empty
+      <strong>No hay accesorios cargados</strong>
+      @endforelse
+      <div class="container d-flex justify-content-center">
+        {{$Accesories->links()}}
+      </div>
   </div>
 </section>
 <br><br>
