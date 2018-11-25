@@ -12,37 +12,71 @@ class AccesorieController extends Controller
       return view('accesoryForm');
   }
 
-  public function create(Request $Request)
+  public function create(Request $request)
   {
-    $this->validate([
+    $request->validate([
         'name' => 'required|min:3|max:250',
         'description' => 'required|max:250|min:50',
         'price' => 'required|numeric',
         'units' => 'required|numeric',
-        'image' => 'required'
+        'images' => 'required'
       ]);
 
+      $datos = $request->all();
+
       if ($request->hasFile('image')) {
-        $path = $request->file('image')->storeAs('products/', $request->title);
+        $path = $request->file('image')->storeAs('accesories/', $request->title);
         $datos['images'] = $path;
       }
-        $datos = $request->all();
 
         Accesorie::create($datos);
+
+        session()->flash('message', 'El accesorio se creó con éxito.');
+
+        return back();
+  }
+
+  public function editionForm($id)
+  {
+    $accesorie = Accesorie::find($id);
+
+    return view('accesoryEditionForm', compact('accesorie'));
+
+  }
+
+
+
+  public function edit(Request $request, Accesorie $accesorie)
+  {
+    $request->validate([
+        'name' => 'required|min:3|max:250',
+        'description' => 'required|max:250|min:50',
+        'price' => 'required|numeric',
+        'units' => 'required|numeric',
+        'images' => 'required'
+      ]);
+
+      $accesorie->update($request->all());
+
+      session()->flash('message', 'El accesorio se modificó con éxito.');
+
+      return back();
+  }
+
+    public function destroy(Accesorie $accesorie)
+  {
+    $accesorie->delete();
+
+    session()->flash('message', 'El accesorio se eliminó con éxito.');
+
+    return back();
   }
 
 
 
 
-  // public function latestacc()
-  // {
-  //     $latestaccesories = Accesorie::where('units', '>', 10)
-  //      ->latest()
-  //      ->limit(4)
-  //      ->get();
-  //
-  //      return view('welcome', compact('latestaccesories'));
-  // }
+
+
 
 // si modifico un seeder como tengo que hacer para volverlo a correr?
 // puedo cargar la ruta de imagenes en el seeder?

@@ -10,6 +10,15 @@ Smarteate - Panel de Administrador
   <div class="linea">
     <span>Productos</span>
   </div>
+    
+  <div class="">
+    @if (session()->has('message'))
+  		<div class="alert alert-success text-center">
+  			{{ session()->get('message') }}
+  		</div>
+  	@endif
+  </div>
+
   <br>
   <div class="row justify-content-center">
     <a href="/products/create" class="btn btn-success text-center">Crear Productos</a>
@@ -28,13 +37,18 @@ Smarteate - Panel de Administrador
       <div class="justify-content-center">{{ $product->units}}</div>
       <br>
     </div>
-    <div class="list-group col-sm-4 d-inline-flex p-2">
+    <div class="col-sm-4 flex-column p-2">
       <br><br>
-      <a href="smarteate/edit/product/{{$product->id}}" class="list-group-item list-group-item-primary text-center">Editar</a>
+
+      <a href="/products/modify/{{$product->id}}" class="btn btn-warning">Editar</a>
 
       <br><br>
 
-      <a href="smarteate/delete/product/{{$product->id}}" class="list-group-item list-group-item-danger text-center">Borrar</a>
+      <form action="/products/delete/{{$product->id}}" method="post">
+				@method('DELETE')
+				@csrf
+				<button class="btn btn-danger">Borrar</button>
+			</form>
     </div>
     @empty
     <strong>No hay productos cargados</strong>
@@ -52,7 +66,7 @@ Smarteate - Panel de Administrador
     </div>
     <br>
     <div class="row justify-content-center">
-      <a href="smarteate/accesories/create" class="btn btn-success text-center">Crear Accesorio</a>
+      <a href="/accesories/create" class="btn btn-success text-center">Crear Accesorio</a>
     </div>
     <br><br>
     @forelse($Accesories as $accesory)
@@ -70,11 +84,16 @@ Smarteate - Panel de Administrador
       </div>
       <div class="list-group col-sm-4 d-inline-flex p-2">
         <br><br>
-        <a href="smarteate/edit/accesory/{{$accesory->id}}" class="list-group-item list-group-item-primary text-center">Editar</a>
+        <a href="/accesory/modify/{{$accesory->id}}" class="list-group-item list-group-item-primary text-center">Editar</a>
 
         <br><br>
 
-        <a href="smarteate/delete/accesory/{{$accesory->id}}" class="list-group-item list-group-item-danger text-center">Borrar</a>
+        <form action="/accesory/delete/{{$accesory->id}}" method="post">
+          @method('DELETE')
+          @csrf
+          <button class="btn btn-danger">Borrar</button>
+        </form>
+
       </div>
       @empty
       <strong>No hay accesorios cargados</strong>

@@ -3,16 +3,19 @@
 
     use Illuminate\Database\Eloquent\Model;
     use Illuminate\Database\Eloquent\SoftDeletes;
-    use Sofa\Eloquence\Eloquence;
+
 
     class Product extends Model
     {
         use SoftDeletes;
-        use Eloquence;
+
 
         protected $fillable = [
-            'name', 'price', 'units', 'description', 'image'
+            'name', 'price', 'units', 'description', 'images'
         ];
+
+         protected $dates = ['deleted_at'];
+
 
         protected $searchableColumns = ['name', 'price'];
 

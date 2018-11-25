@@ -13,6 +13,20 @@ Smarteate- Add products
   <br>
   <h1 class="linea">Products Creation Panel</h1>
   <br>
+
+  <div class="">
+    @if (session()->has('message'))
+  <div class="alert alert-success">
+    {{ session()->get('message') }}
+  </div>
+    @endif
+  </div>
+
+  <div class="">
+    @include('partials.error')
+    </div>
+    <br>
+
   <form class="form-group" action="/product/new/add" method="post" enctype="multipart/form-data">
     @csrf
     <br>
@@ -49,18 +63,10 @@ Smarteate- Add products
     <br>
     <br>
   </form>
-@include('partials.error')
 
+  <br><br>
 
 
 
 </div>
-
-
-
-
-
-
-
-
 @endsection

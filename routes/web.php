@@ -25,6 +25,8 @@ Auth::routes();
 
 Route::get('/allproducts', 'ProductController@index');
 
+// hacer lo mismo para accesorios
+
 Route::get('/carrito', 'OrderController@show');
 
 Route::post('/producto/search', 'ProductController@search');
@@ -33,12 +35,33 @@ Route::get('/productos/{id}', 'ProductController@show');
 
 Route::get('order/{id}', 'OrderController@add');
 
-Route::get('smarteate/admin', 'AdminController@index');
+
+// Rutas Admin
+
+Route::get('/smarteate/admin', 'AdminController@index');
+
+// creacción
 
 Route::get('/products/create', 'ProductController@creationForm');
 
 Route::post('/product/new/add', 'ProductController@create');
 
-Route::get('smarteate/accesory/create', 'accesorieController@creationForm');
+Route::get('/accesories/create', 'accesorieController@creationForm');
 
-Route::post('accesory/new/add', 'accesorieController@create');
+Route::post('/accesory/new/add', 'accesorieController@create');
+
+// Edición
+
+Route::get('/products/modify/{id}', 'ProductController@editionForm');
+
+Route::put('/product/edit/{product}', 'ProductController@edit');
+
+Route::get('/accesory/modify/{id}', 'AccesorieController@editionForm');
+
+Route::put('/accesory/edit/{accesorie}', 'AccesorieController@edit');
+
+// Borrado
+
+Route::delete('/products/delete/{product}', 'ProductController@destroy');
+
+Route::delete('/accesory/delete/{accesorie}', 'AccesorieController@destroy');

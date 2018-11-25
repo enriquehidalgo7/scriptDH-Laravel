@@ -10,8 +10,10 @@ class Accesorie extends Model
   use SoftDeletes;
 
   protected $fillable = [
-      'name', 'price', 'units', 'description', 'image'
+      'name', 'price', 'units', 'description', 'images'
   ];
+
+  protected $dates = ['deleted_at'];
 
   public function product()
   {

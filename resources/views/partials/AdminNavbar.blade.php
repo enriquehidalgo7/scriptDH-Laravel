@@ -13,6 +13,9 @@
       <i class="fas fa-bars"></i>
     </div>
   <nav class="navbar_Items">
+    <div class="navbar_Link opciones">
+      <a href="/smarteate/admin">Panel del Administrador</a>
+    </div>
     <div class="buscador">
       <input type="text" id="buscador" name="buscador" placeholder="buscar...">
       <button type="submit" class="btnLupa"><i class="fas fa-search lupa"></i></button>

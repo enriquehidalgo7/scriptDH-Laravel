@@ -12,6 +12,8 @@
             'product_id', 'user_id', 'quantity', 'address'
         ];
 
+        protected $dates = ['deleted_at'];
+
         public function user()
         {
             return $this->belongsTo(User::class, 'user_id');

@@ -55,7 +55,7 @@ class ProductController extends Controller
     {
       $request->validate([
           'name' => 'required|min:3|max:250',
-          'description' => 'required|max:250|min:50',
+          'description' => 'required|max:250|min:20',
           'price' => 'required|numeric',
           'units' => 'required|numeric',
         ]);
@@ -69,7 +69,9 @@ class ProductController extends Controller
 
           Product::create($datos);
 
-          return 'todo bien';
+          session()->flash('message', 'El producto se creó con éxito.');
+
+          return back();
     }
 
 
@@ -97,37 +99,42 @@ class ProductController extends Controller
       return view('showProduct', compact('product'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Product $product)
+
+
+    public function editionForm($id)
     {
-        //
+      $product = Product::find($id);
+
+      return view('ProductEditionForm', compact('product'));
+
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Product $product)
+
+
+    public function edit(Request $request, Product $product)
     {
-        //
+      $request->validate([
+          'name' => 'required|min:3|max:250',
+          'description' => 'required|max:250|min:20',
+          'price' => 'required|numeric',
+          'units' => 'required|numeric',
+        ]);
+
+        $product->update($request->all());
+
+        session()->flash('message', 'El producto se modificó con éxito.');
+
+        	return redirect('/smarteate/admin');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Product  $product
-     * @return \Illuminate\Http\Response
-     */
+
+
     public function destroy(Product $product)
-    {
-        //
-    }
+  {
+    $product->delete();
+
+    session()->flash('message', 'El producto se eliminó con éxito.');
+
+    return back();
+  }
 }

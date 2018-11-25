@@ -11,20 +11,35 @@ Smarteate- Add products
 @section('content')
 <div class="container">
   <br>
-  <h1 class="linea">Products Creation Panel</h1>
+  <h1 class="linea">Accesory Creation Panel</h1>
   <br>
-  <form class="form-group" action="product/new/add" method="post" enctype="multipart/form-data">
+
+  <div class="">
+    @if (session()->has('message'))
+  		<div class="alert alert-success text-center">
+  			{{ session()->get('message') }}
+  		</div>
+  	@endif
+  </div>
+
+
+  <div class="">
+    @include('partials.error')
+    </div>
+    <br>
+
+  <form class="form-group" action="/accesory/new/add" method="post" enctype="multipart/form-data">
     @csrf
     <br>
 
-    <label for="name">Product Name:</label>
+    <label for="name">Accesory Name:</label>
     <br>
     <input type="text" name="name" class="form-control" id="name" placeholder="Specify Name..." required>
     <br>
 
     <label for="description">Description:</label>
     <br>
-    <textarea class="form-control" id="Description" rows="4" placeholder="This product is..."></textarea>
+    <textarea class="form-control" name="description" id="Description" rows="4" placeholder="This accespry is..."></textarea>
     <br>
 
     <label for="price">Price:</label>
@@ -44,11 +59,14 @@ Smarteate- Add products
 
     <br>
     <div class="d-flex justify-content-center">
-      <button type="submit" class="btn btn-primary btn-lg">Create Product</button>
+      <button type="submit" class="btn btn-success btn-lg">Create Accesory</button>
     </div>
     <br>
     <br>
-
   </form>
+
+  <br><br>
+
+
 </div>
 @endsection
