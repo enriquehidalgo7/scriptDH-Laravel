@@ -47,7 +47,7 @@ Smarteate- Edición de Accesorios
 
     <label for="Description">Descripcion:</label>
     <br>
-    <textarea class="form-control" name="description" id="Description" rows="4">{{$accesorie->description}}</textarea>
+    <textarea class="form-control text-justify" name="description" id="Description" rows="4">{{$accesorie->description}}</textarea>
     <br>
 
     <label for="price">Precio:</label>
