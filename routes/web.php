@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/smarteate/home','ProductController@latest');
+Route::get('/smarteate/home','SearchController@latest');
 
 // Route::get('smarteate/home', 'ProductController@latest');
 

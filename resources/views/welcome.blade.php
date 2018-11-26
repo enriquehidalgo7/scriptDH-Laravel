@@ -21,7 +21,8 @@
         <img class="card-img-top" src="{{$product->images}}">
       <div class="card-body">
       <h5 class="card-title text-center">{{ $product->name }}</h5>
-      <h6 class="card-title text-center">{{ $product->price }}</h6>
+      <hr>
+      <h6 class="card-title text-center">${{ $product->price }}</h6>
     </div>
   </div>
   </a>

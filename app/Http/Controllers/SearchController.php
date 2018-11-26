@@ -28,4 +28,18 @@ class SearchController extends Controller
     return view('searchResult', compact('Products','Accesories'));
 
   }
+
+  public function latest() {
+      $latestproducts = Product::where('units', '>', 10)
+       ->latest()
+       ->limit(4)
+       ->get();
+
+       $latestaccesories = Accesorie::where('units', '>', 10)
+        ->latest()
+        ->limit(4)
+        ->get();
+
+       return view('welcome', compact('latestproducts', 'latestaccesories'));
+  }
 }

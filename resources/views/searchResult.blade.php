@@ -7,7 +7,7 @@ Resultados de búsqueda
 
 @section('content')
 <div class="container">
-  <h1 class="linea">Encotramos los siguientes productos:</h1>
+  <h1 class="linea">Tu búsqueda arrojo los siguientes resultados:</h1>
   <br>
   <div class="container d-flex flex-row">
   @forelse($Products as $product)
@@ -26,7 +26,9 @@ Resultados de búsqueda
 </div>
 <br>
   @empty
-  <h1 class="linea">No encontramos productos como los que buscas.</h1>
+  <div class="container text-center">
+    <h4>No encontramos productos como los que buscas.</h4>
+  </div>
   @endforelse
 </div>
 </div>
@@ -34,10 +36,8 @@ Resultados de búsqueda
   <br><br>
 
   <div class="container">
-  <h2 class="linea">Encotramos los siguientes accesorios:</h2>
-  <br>
   <div class="container d-flex flex-row">
-  @forelse($Accesories as $accesory)
+  @foreach($Accesories as $accesory)
   <div class="col-sm-10 col-md-4 col-lg-3 d-flex justify-content-around">
       <div class="card mx-2" style="width: 18rem;">
     <img class="card-img-top" src="{{$accesory->images}}">
@@ -51,9 +51,7 @@ Resultados de búsqueda
     </div>
     </div>
   </div>
-    @empty
-    <h1 class="linea">No encontramos accesorios como los que buscas.</h1>
-    @endforelse
+  @endforeach
   </div>
   </div>
   <br><br>

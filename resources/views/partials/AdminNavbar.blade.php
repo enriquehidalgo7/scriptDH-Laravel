@@ -1,6 +1,6 @@
 <div class="navbar">
    <div class="navbar_Link navbar_Link-brand">
-     <a href="index.php">
+     <a href="/smarteate/home">
        <i class="fas fa-mobile-alt icono"></i>
        SmarTeate
     </a>

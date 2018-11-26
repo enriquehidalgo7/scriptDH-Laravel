@@ -21,24 +21,6 @@ class ProductController extends Controller
        return view('indexproducts', compact('allProducts'));
      }
 
-
-     public function latest()
-     {
-         $latestproducts = Product::where('units', '>', 10)
-          ->latest()
-          ->limit(4)
-          ->get();
-
-          $latestaccesories = Accesorie::where('units', '>', 10)
-           ->latest()
-           ->limit(4)
-           ->get();
-
-          return view('welcome', compact('latestproducts', 'latestaccesories'));
-     }
-
-
-
     public function creationForm()
     {
         return view('productForm');
@@ -51,12 +33,13 @@ class ProductController extends Controller
           'description' => 'required|max:250|min:20',
           'price' => 'required|numeric',
           'units' => 'required|numeric',
+          'images' => 'required|image',
         ]);
 
         $datos = $request->all();
 
         if ($request->hasFile('image')) {
-          $path = $request->file('image')->storeAs('public/products', $request->title);
+          $path = $request->file('image')->storeAs('/products', $request->title);
           $datos['images'] = $path;
         }
 
@@ -111,6 +94,7 @@ class ProductController extends Controller
           'description' => 'required|max:250|min:20',
           'price' => 'required|numeric',
           'units' => 'required|numeric',
+          'images'=> 'required|image',
         ]);
 
         $product->update($request->all());
