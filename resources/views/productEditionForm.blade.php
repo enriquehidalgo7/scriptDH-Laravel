@@ -47,7 +47,7 @@ Smarteate- Edit products
 
     <label for="Description">Descripcion:</label>
     <br>
-    <textarea class="form-control" name="description" id="Description" rows="4">{{$product->description}}</textarea>
+    <textarea class="form-control text-justify" name="description" id="Description" rows="4">{{$product->description}}</textarea>
     <br>
 
     <label for="price">Precio:</label>

@@ -7,6 +7,14 @@ use App\Accesorie;
 
 class AccesorieController extends Controller
 {
+
+  public function show($id)
+  {
+    $accesory = Accesorie::find($id);
+
+    return view('showAccesorie', compact('accesory'));
+  }
+
   public function creationForm()
   {
       return view('accesoryForm');

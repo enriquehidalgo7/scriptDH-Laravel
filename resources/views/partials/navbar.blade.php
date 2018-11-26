@@ -1,6 +1,6 @@
 <div class="navbar">
    <div class="navbar_Link navbar_Link-brand">
-     <a href="index.php">
+     <a href="smarteate/home">
        <i class="fas fa-mobile-alt icono"></i>
        SmarTeate
     </a>
@@ -20,7 +20,7 @@
     <nav class="col-lg-3">
       <form class="form-inline my-2 my-lg-0" action="/search/items/" method="post">
           @csrf
-          <input class="form-control px-auto mr-sm-2" type="search" name="buscador" placeholder="buscar..." aria-label="Search">
+          <input class="form-control px-auto mr-sm-2" type="search" name="buscador" placeholder="buscar..." aria-label="Search" required>
           <button class="btn" type="submit"><i class="fas fa-search lupa"></i></button>
       </form>
   </nav>

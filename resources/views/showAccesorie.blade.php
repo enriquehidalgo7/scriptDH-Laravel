@@ -2,26 +2,26 @@
 
 
 @section('title')
-Nuestros Productos
+Nuestros Accesorios
 @endsection
 
 @section('content')
 <div class="container">
   <div class="row">
     <div class="container col-sm-12 col-md-6">
-      <img src="{{$product->images}}" class="img-fluid w-100">
+      <img src="{{$accesory->images}}" class="img-fluid w-100">
     </div>
 <aside class="container col-sm-12 col-md-6 border">
 
-  <h1 class="text-center py-2">{{$product->name}}</h1>
+  <h1 class="text-center py-2">{{$accesory->name}}</h1>
 
   <br><br>
 
-  <p class="text-justify">{{$product->description}}</p>
+  <p class="text-justify">{{$accesory->description}}</p>
 
   <br><br>
 
-  <h2 class="text-center py-2">$ {{$product->price}}</h2>
+  <h2 class="text-center py-2">$ {{$accesory->price}}</h2>
 
 <br><br>
 
@@ -39,9 +39,9 @@ Nuestros Productos
   </li>
 </ul>
 
-<a href="/order/{{$product->id}}">
+
+<a href="/order/{{$accesory->id}}">
   <div class="agregar">agregar al <i class="fas fa-shopping-cart"></i></div>
-  <button type="btn btn-primary btn-lg" name="button"></button>
 </a>
 
 </aside>

@@ -33,12 +33,18 @@ Route::post('/producto/search', 'ProductController@search');
 
 Route::get('/productos/{id}', 'ProductController@show');
 
-Route::get('order/{id}', 'OrderController@add');
+Route::get('/accesorio/{id}', 'AccesorieController@show');
+
+Route::get('/order/{id}', 'OrderController@add')->middleware('auth');
+
+
+
+
 
 
 // Rutas Admin
 
-Route::get('/smarteate/admin', 'AdminController@index');
+Route::get('/smarteate/admin', 'AdminController@index')->middleware('IsAdmin');
 
 Route::post('/admin/search/items/', 'AdminController@seeker');
 
