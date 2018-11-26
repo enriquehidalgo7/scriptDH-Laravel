@@ -10,6 +10,13 @@ Smarteate- Edit products
 @section('content')
 
 <div class="container">
+
+  <div class="container">
+    <div class="row d-flex flex-row-reverse">
+      <button type="button" class="btn btn-primary btn-large" name="button"><a href="/smarteate/admin" class="text-white">Panel del Administrador</a></button>
+    </div>
+  </div>
+
   <br>
   <h1 class="linea">Products Eidition Panel</h1>
   <br>

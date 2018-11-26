@@ -16,4 +16,18 @@ class AdminController extends Controller
 
     return view('adminPanel', compact('Products', 'Accesories'));
   }
+
+  public function seeker(Request $request) {
+
+    $request->validate([
+        'buscador' => 'required|min:3|max:10',
+      ]);
+
+  $Products = Product::where('name','like','%'.$request->input('buscador').'%')->get();
+
+  $Accesories = Accesorie::where('name','like','%'.$request->input('buscador').'%')->get();
+
+  return view('adminSearchResult', compact('Products','Accesories'));
+
+}
 }

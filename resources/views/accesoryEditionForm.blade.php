@@ -10,6 +10,13 @@ Smarteate- Edición de Accesorios
 @section('content')
 
 <div class="container">
+
+  <div class="container">
+    <div class="row d-flex flex-row-reverse">
+      <button type="button" class="btn btn-primary btn-large" name="button"><a href="/smarteate/admin" class="text-white">Panel del Administrador</a></button>
+    </div>
+  </div>
+
   <br>
   <h1 class="linea">Panel de Edición de Accesorios</h1>
   <br>

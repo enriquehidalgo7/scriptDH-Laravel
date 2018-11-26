@@ -21,13 +21,6 @@ class ProductController extends Controller
        return view('indexproducts', compact('allProducts'));
      }
 
-     // public function search() {
-     //
-     //   $product = Product::search(Input::get('search'))->orderBy('id', 'desc')->paginate(6);
-     //
-     //   return view('search', ['product' => $product]);
-     // }
-
 
      public function latest()
      {
@@ -129,12 +122,12 @@ class ProductController extends Controller
 
 
 
-    public function destroy(Product $product)
-  {
-    $product->delete();
+      public function destroy(Product $product)
+    {
+      $product->delete();
 
-    session()->flash('message', 'El producto se eliminó con éxito.');
+      session()->flash('message', 'El producto se eliminó con éxito.');
 
-    return back();
-  }
+      return redirect('/smarteate/admin');
+    }
 }

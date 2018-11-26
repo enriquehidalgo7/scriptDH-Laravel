@@ -40,6 +40,8 @@ Route::get('order/{id}', 'OrderController@add');
 
 Route::get('/smarteate/admin', 'AdminController@index');
 
+Route::post('/admin/search/items/', 'AdminController@seeker');
+
 // creacción
 
 Route::get('/products/create', 'ProductController@creationForm');
@@ -65,3 +67,7 @@ Route::put('/accesory/edit/{accesorie}', 'AccesorieController@edit');
 Route::delete('/products/delete/{product}', 'ProductController@destroy');
 
 Route::delete('/accesory/delete/{accesorie}', 'AccesorieController@destroy');
+
+// Buscador de Productos y Accesorios
+
+Route::post('/search/items/', 'SearchController@seeker');

@@ -12,14 +12,12 @@
     <div class="navbar_Link navbar_Link-toggle">
       <i class="fas fa-bars"></i>
     </div>
-  <nav class="navbar_Items">
-    <div class="navbar_Link opciones">
-      <a href="/smarteate/admin">Panel del Administrador</a>
-    </div>
-    <div class="buscador">
-      <input type="text" id="buscador" name="buscador" placeholder="buscar...">
-      <button type="submit" class="btnLupa"><i class="fas fa-search lupa"></i></button>
-    </div>
+    <nav class="col-lg-3">
+      <form class="form-inline my-2 my-lg-0" action="/admin/search/items/" method="post">
+          @csrf
+          <input class="form-control px-auto mr-sm-2" type="search" name="buscador" placeholder="buscar..." aria-label="Search">
+          <button class="btn" type="submit"><i class="fas fa-search lupa"></i></button>
+      </form>
   </nav>
   <nav class="navbar_Items navbar_Items--right">
 <div class="navbar_Items navbar_Items--right">
